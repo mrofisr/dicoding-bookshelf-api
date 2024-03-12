@@ -1,2 +1,2 @@
-# dicoding-bookshelf-api
+# Dicoding Bookshelf API
 Dicoding Submission Bookshelf API
