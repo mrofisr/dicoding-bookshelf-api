@@ -77,6 +77,62 @@ const addBookHandler = (request, h) => {
 };
 
 const getAllBooksHandler = (request, h) => {
+    const { name, reading, finished } = request.query;
+    let filteredBooks = books;
+    if (name !== undefined) {
+        filteredBooks = books.filter((book) =>
+            book.name.toLowerCase().includes(name.toLowerCase())
+        );
+        const response = h.response({
+            status: "success",
+            data: {
+                books: filteredBooks.map((book) => ({
+                    id: book.id,
+                    name: book.name,
+                    publisher: book.publisher,
+                })),
+            },
+        });
+        response.code(200);
+        response.type("application/json");
+        return response;
+    }
+    if (finished !== undefined) {
+        const isFinished =
+            finished === "1" ? true : finished === "0" ? false : undefined;
+        filteredBooks = books.filter((book) => book.finished === isFinished);
+        const response = h.response({
+            status: "success",
+            data: {
+                books: filteredBooks.map((book) => ({
+                    id: book.id,
+                    name: book.name,
+                    publisher: book.publisher,
+                })),
+            },
+        });
+        response.code(200);
+        response.type("application/json");
+        return response;
+    }
+    if (reading !== undefined) {
+        const isReading =
+            reading === "1" ? true : reading === "0" ? false : undefined;
+        filteredBooks = books.filter((book) => book.reading === isReading);
+        const response = h.response({
+            status: "success",
+            data: {
+                books: filteredBooks.map((book) => ({
+                    id: book.id,
+                    name: book.name,
+                    publisher: book.publisher,
+                })),
+            },
+        });
+        response.code(200);
+        response.type("application/json");
+        return response;
+    }
     const response = h.response({
         status: "success",
         data: {
