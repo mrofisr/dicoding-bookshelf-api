@@ -1,0 +1,33 @@
+{
+    "name": "dicoding-bookshelf-api",
+    "version": "1.0.0",
+    "description": "Dicoding Submission Bookshelf API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "PORT=9000 node index.js",
+        "dev": "PORT=9000 nodemon index.js",
+        "lint": "eslint ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mrofisr/dicoding-bookshelf-api.git"
+    },
+    "keywords": ["dicoding"],
+    "author": "Muhammad Abdur Rofi Maulidin <mrofisr>",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mrofisr/dicoding-bookshelf-api/issues"
+    },
+    "homepage": "https://github.com/mrofisr/dicoding-bookshelf-api#readme",
+    "dependencies": {
+        "@hapi/hapi": "^21.3.3",
+        "nanoid": "^3.3.7"
+    },
+    "devDependencies": {
+        "eslint": "^8.57.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.29.1",
+        "nodemon": "^3.1.0"
+    }
+}
